@@ -1,0 +1,36 @@
+package:
+  artifact: 'target/${self:service}-${self:provider.stage}.jar'
+
+functions:
+  validateMutant:
+    handler: com.serverless.functions.mutantsFunctions.validateMutant
+    events:
+      - http:
+        path: /mutants
+        method: post
+
+iamRoleStatements:
+ - Effect: "Allow"
+   Action:
+ - "dynamodb:*"
+   Resource: "*"
+   
+resources:
+  Resources:
+    mutantsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: dna_mutants
+        AttributeDefinitions:
+          - AttributeName: dna
+            AttributeType: S
+          - AttributeName: mutantDetector
+            AttributeType: S
+        KeySchema:
+          - AttributeName: dna
+            KeyType: HASH
+          - AttributeName: mutantDetector
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
