@@ -34,6 +34,4 @@ public class DynamoDBManager {
         DynamoDBManager manager = instance();
         return manager.mapper;
     }
-
 }
-

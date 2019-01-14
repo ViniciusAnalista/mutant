@@ -2,12 +2,18 @@ package:
   artifact: 'target/${self:service}-${self:provider.stage}.jar'
 
 functions:
-  validateMutant:
-    handler: com.serverless.functions.mutantsFunctions.validateMutant
+  mutantValidate:
+    handler: com.serverless.functions.mutantsFunctions.mutantsValidate
     events:
       - http:
         path: /mutants
         method: post
+  mutantsSearch:
+    handler: com.serverless.functions.mutantsFunctions.mutantsSearch
+    events:
+      - http:
+        path: /stats
+        method: get
 
 iamRoleStatements:
  - Effect: "Allow"

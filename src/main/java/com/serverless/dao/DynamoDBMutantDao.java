@@ -40,9 +40,6 @@ public class DynamoDBMutantDao implements MutantDao {
 	public List<Mutant> list() throws IOException {
 		DynamoDBScanExpression scanExp = new DynamoDBScanExpression();
 		List<Mutant> results = mapper.scan(Mutant.class, scanExp);
-		for (Mutant m : results) {
-			logger.info("Mutant - list(): " + m.toString());
-		}
 		return results;
 	}
 }

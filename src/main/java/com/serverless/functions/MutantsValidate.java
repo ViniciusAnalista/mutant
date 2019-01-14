@@ -11,9 +11,9 @@ import com.serverless.domain.DnaReceived;
 import com.serverless.domain.Mutant;
 import com.serverless.process.MutantValidate;
 
-public class MutantsFunctions{
+public class MutantsValidate{
 
-	private static final Logger logger = LogManager.getLogger(MutantsFunctions.class);
+	private static final Logger logger = LogManager.getLogger(MutantsValidate.class);
 
 	private  DynamoDBMutantDao eventDao = DynamoDBMutantDao.instance();
 
