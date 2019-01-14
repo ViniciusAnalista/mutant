@@ -9,7 +9,7 @@ import com.serverless.dao.DynamoDBMutantDao;
 import com.serverless.domain.ApiGatewayResponse;
 import com.serverless.domain.DnaReceived;
 import com.serverless.domain.Mutant;
-import com.serverless.process.MutantValidate;
+import com.serverless.process.MutantProcess;
 
 public class MutantsValidate{
 
@@ -21,7 +21,7 @@ public class MutantsValidate{
 	public ApiGatewayResponse handleRequest(DnaReceived dna) {
 
       try {
-    	  MutantValidate validate = new MutantValidate();
+    	  MutantProcess validate = new MutantProcess();
     	  Mutant mutant = new Mutant();
     	  int statusCode = 0;
     	  mutant.setId(dna.dnaString());
