@@ -3,7 +3,7 @@ package com.serverless.process;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MutantValidate {
+public class MutantProcess{
 
 	public boolean ismutant(String[] dna) {
 		
