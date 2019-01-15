@@ -33,7 +33,7 @@ public class DynamoDBMutantDao implements MutantDao {
 	}
 
 	public void save(Mutant mutant) throws IOException {
-		logger.info("Mutant - save(): " + mutant.toString());
+		logger.info("Mutant - save(): " + mutant.getId());
 		mapper.save(mutant);
 	}
 
